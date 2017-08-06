@@ -1,0 +1,16 @@
+sudo: required
+language: c
+
+env:
+    - GHCVER = 7.4
+    - GHCVER = 7.6
+    - GHCVER = 7.8
+    - GHCVER = 7.10
+    - GHCVER = 8.0
+
+before install:
+    - sudo apt-get install ghc-$GHCVER
+
+script:
+    - ghc -o fac fac.hs
+    - ./fac

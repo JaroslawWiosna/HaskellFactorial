@@ -9,6 +9,8 @@ env:
     - GHCVER = 8.0
 
 before install:
+    - sudo add-apt-repository -y ppa:hvr/ghc
+    - sudo apt-get update
     - sudo apt-get install ghc-$GHCVER
 
 script:
